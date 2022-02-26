@@ -4,6 +4,9 @@ Second, reimplement every single line.
 
 ```python
 # del_py_files.py
+# change directory to yolov5 folder
+# python del_py_files.py --folder ./
+
 import os
 import argparse
 

@@ -1,4 +1,7 @@
 First, run del_py_files.py to delete all .py file in the repository.
+```bash
+python del_py_files.py --folder ./
+```
 
 Second, reimplement every single line.
 

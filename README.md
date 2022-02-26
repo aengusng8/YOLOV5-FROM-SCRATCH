@@ -13,8 +13,12 @@ Second, reimplement every single line.
 import os
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--folder', type=str)
+def parse_opt():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--folder', type=str)
+    args = parser.parse_args()
+    
+    return args
 
 def del_py_files(FOLDER_PATH):
     lst = os.listdir(f"{FOLDER_PATH}/")
@@ -28,7 +32,10 @@ def del_py_files(FOLDER_PATH):
         else:
             del_py_files(f"{FOLDER_PATH}/{obj}")
 
-args = parser.parse_args()
-del_py_files(args.folder)
+def main(opt):
+    del_py_files(opt.folder)
 
+if __name__ == "__main__":
+    opt = parse_opt()
+    main(opt)
 ```
